@@ -14,9 +14,3 @@ jobs:
 
     - name: Build backend image
       run: docker build -t backend ./backend
-
-    - name: Build service1 image
-      run: docker build -t service1 ./service1
-
-    - name: Build service2 image
-      run: docker build -t service2 ./service2
