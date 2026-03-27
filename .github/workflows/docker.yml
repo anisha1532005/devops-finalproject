@@ -9,7 +9,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-    - name: Build
-      run: docker-compose up --build -d
+    - name: Build backend image
+      run: docker build -t backend ./backend
+
+    - name: Build service1 image
+      run: docker build -t service1 ./service1
+
+    - name: Build service2 image
+      run: docker build -t service2 ./service2
