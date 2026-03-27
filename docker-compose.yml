@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  service1:
+    image: httpd:latest
+    ports:
+      - "8081:80"
+    volumes:
+      - ./service1/:/usr/local/apache2/htdocs/
+
+  service2:
+    image: httpd:latest
+    ports:
+      - "8082:80"
+    volumes:
+      - ./service2/:/usr/local/apache2/htdocs/
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
